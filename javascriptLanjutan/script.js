@@ -1,5 +1,6 @@
 // Cara untuk membuat Object pada Javascript
 // 1. Object Literal
+// Tidak obfektif jika objec nya banyak
 // let mahasiswa = {
 //   //Properti
 //   nama: "Fikri",
@@ -35,20 +36,29 @@
 // console.log(mahasiswa1.energi);
 
 // 2. Function Declarration
+
+// terdapat satu object yang memiliki 2 method
+const methodMahasiswa = {
+  makan: function (porsi) {
+    this.energi += porsi;
+    console.log(`Halo ${this.nama}, selamat makan!`);
+  },
+
+  main: function (jam) {
+    this.energi -= jam;
+    console.log(`Halo ${this.nama}, selamat bermain!`);
+  },
+};
+
 function Mahasiswa(nama, energi) {
   let mahasiswa = {};
   mahasiswa.nama = nama;
   mahasiswa.energi = energi;
 
-  mahasiswa.makan = function (porsi) {
-    this.energi += porsi;
-    console.log(`Halo ${this.nama}, selamat makan!`);
-  };
+  //Membuat properti yang diambil dari object methodMahasiswa
+  mahasiswa.makan = methodMahasiswa.makan;
+  mahasiswa.main = methodMahasiswa.main;
 
-  mahasiswa.main = function (jam) {
-    this.energi -= jam;
-    console.log(`Halo ${this.nama}, selamat bermain!`);
-  };
   return mahasiswa;
 }
 
