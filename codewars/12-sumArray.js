@@ -42,11 +42,19 @@ function sumArray(array) {
   let max = Math.max(...array);
   let min = Math.min(...array);
   let sum = 0;
+  let maxFound = false;
+  let minFound = false;
 
   for (let i = 0; i < array.length; i++) {
-    if (array[i] !== max && array[i] !== min) {
-      sum += array[i];
+    if (array[i] === max && !maxFound) {
+      maxFound = true;
+      continue;
     }
+    if (array[i] === min && !minFound) {
+      minFound = true;
+      continue;
+    }
+    sum += array[i];
   }
 
   return sum;

@@ -37,7 +37,7 @@
 
 // 2. Function Declarration
 
-// terdapat satu object yang memiliki 2 method
+// membuat satu object yang memiliki 2 method
 const methodMahasiswa = {
   makan: function (porsi) {
     this.energi += porsi;
