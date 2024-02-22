@@ -1,4 +1,6 @@
 // Cara untuk membuat Object pada Javascript
+
+
 // 1. Object Literal
 // Tidak obfektif jika objec nya banyak
 // let mahasiswa = {
@@ -34,6 +36,7 @@
 // console.log(mahasiswa1.energi);
 // mahasiswa1.makan(4);
 // console.log(mahasiswa1.energi);
+
 
 // 2. Function Declarration
 
