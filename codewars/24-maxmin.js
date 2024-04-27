@@ -24,8 +24,13 @@
 //   return maxValue;
 // };
 
+<<<<<<< HEAD
 // titik tiga untuk mengubah dari
 // [1,2,3] = 1,2,3
+=======
+// titik tiga untuk mengubah dari 
+[1,2,3] = 1,2,3
+>>>>>>> 3aa830caa6136628919efdb0555ed22318578836
 // Menggunakan Math min dan max javaScript
 // const min = (list) => Math.min(...list);
 // const max = (list) => Math.max(...list);
