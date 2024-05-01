@@ -5,7 +5,6 @@ Coding Challenge 2024 33/366
 Challenge 2024 33. summation
 ==============
 */
-
 // var summation = function (num) {
 //   // Code here
 //   let total = 0;
