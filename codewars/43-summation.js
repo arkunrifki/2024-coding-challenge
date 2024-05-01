@@ -6,6 +6,7 @@ Challenge 2024 33. summation
 ==============
 */
 
+<<<<<<< HEAD
 // var summation = function (num) {
 //   // Code here
 //   let total = 0;
@@ -19,3 +20,16 @@ const summation = (n) => (n * (n + 1)) / 2;
 console.log(summation(1));
 console.log(summation(2));
 console.log(summation(3));
+=======
+var summation = function (num) {
+  // Code here
+  let total = 0;
+  for (let i = 1; i <= num; i++) {
+    total += i;
+  }
+  return total;
+};
+
+console.log(summation(1));
+console.log(summation(2));
+>>>>>>> 904286d8a302e27fab8eaee6315cce574fc86a60
