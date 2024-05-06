@@ -19,3 +19,9 @@ console.log(litres(2));
 console.log(litres(3));
 console.log(litres(1.4));
 console.log(litres(12.3));
+
+function calculate(value) {
+  return value < 2 ? value : calculate(value - 1) + calculate(value - 2);
+}
+
+console.log(calculate(3));
