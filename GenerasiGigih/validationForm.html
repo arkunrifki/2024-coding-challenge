@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      form {
+        background: white;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+      .error {
+        color: red;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="loginForm">
+      <label for="email">Email :</label>
+      <input type="text" id="email" name="email" />
+      <span id="emailError" class="error"></span>
+      <br />
+      <br />
+      <br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+      <span id="passwordError" class="error"></span>
+      <br />
+
+      <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+    <script>
+      function validateForm() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let emailError = document.getElementById("emailError");
+        let passwordError = document.getElementById("passwordError");
+
+        //clear previous errors
+        emailError.textContent = "";
+        passwordError.textContent = "";
+
+        let valid = true;
+
+        //Email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          emailError.textContent = "Please enter a valid email address";
+          valid = false;
+        }
+
+        // Password validation
+        if (password.length < 6) {
+          passwordError.textContent =
+            "Password must be at least 6 characters long.";
+          valid = false;
+        }
+
+        // Check if fields are empty
+        if (email.trim() === "") {
+          emailError.textContent = "Email cannot be empty.";
+          valid = false;
+        }
+        if (password.trim() === "") {
+          passwordError.textContent = "Password cannot be empty.";
+          valid = false;
+        }
+
+        // Optional additional validation
+        // Check for at least one uppercase letter and one number in the password
+        const passwordPattern = /^(?=.*[A-Z])(?=.*\d)/;
+        if (!passwordPattern.test(password)) {
+          passwordError.textContent =
+            "Password must contain at least one uppercase letter and one number.";
+          valid = false;
+        }
+
+        if (valid) {
+          alert("Form submitted successfully!");
+        }
+      }
+    </script>
+  </body>
+</html>
